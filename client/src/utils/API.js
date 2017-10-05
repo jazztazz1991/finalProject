@@ -10,3 +10,4 @@ export default {
     return axios.get("/api/house/" + id);
   }
 };
+
