@@ -15,7 +15,6 @@ const houseSeed = [
   {
     name: "Scenic View",
     address: "123 internet st",
-    image: "../images/house5.jpg",
     synopsis:
       'This houses biggest selling point is the view from the wall size windows put along the entire length off the house.',
     date: new Date(Date.now())
@@ -23,7 +22,6 @@ const houseSeed = [
   {
     name: "Modern Style",
     address: "123 internet st",
-    image: "../images/house4.jpg",
     synopsis:
       'This houses biggest selling point is the very modern approach to the architecture of the home and the sleek clean lines it contains.',
     date: new Date(Date.now())
