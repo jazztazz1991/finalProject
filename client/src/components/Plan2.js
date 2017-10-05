@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 
 const Plan2 = () => (
     <div className="plan">
-        <p>plan2</p>
-        <Link to="/plan2">View Plan2</Link>
+        <h3>Traditional Management</h3>
+        <p>
+            Our traditional plan offers owners the high level of service and revenue that we are known for combined with a more traditional approach to your fee structure
+        </p>
+        <Link to="/plan2">Learn More</Link>
     </div>
 )
 

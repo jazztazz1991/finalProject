@@ -1,10 +1,13 @@
 import React from "react";
-import "../styles/App.css"
+import "../styles/Photo.css";
+import Center from 'react-center';
 
 const Picture = () => (
-    <div className="picture">
-        <p>pictures</p>
+    <Center>
+    <div>
+        <img className="images" src={require("../images/house5.jpg")} alt="photo of our first house" />
     </div>
+</Center>
 )
 
 export default Picture;

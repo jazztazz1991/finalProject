@@ -1,5 +1,4 @@
 .header{
-    background-color: white;
     width: auto;
     height: 75px;
 }
@@ -14,7 +13,6 @@
     height: 400px;
 }
 .plan{
-    background-color: greenyellow;
     float: left;
     margin: 1.5%;
     height: 150px;
@@ -72,4 +70,10 @@
     margin-top: 10px;
     margin-right: auto;
     margin-left: auto;
+}
+.learn{
+    background-color: blue;
+}
+.background{
+    background-image: url(../images/house1.jpg);
 }
