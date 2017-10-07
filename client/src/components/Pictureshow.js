@@ -5,7 +5,7 @@ import Center from 'react-center';
 const Picture = () => (
     <Center>
     <div>
-        <img className="images" src={require("../images/house5.jpg")} alt="photo of our first house" />
+        <img className="images" src={require("../images/house7.jpg")} alt="photo of our first house" />
     </div>
 </Center>
 )

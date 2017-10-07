@@ -77,3 +77,9 @@
 .background{
     background-image: url(../images/house1.jpg);
 }
+
+.floatright{
+    float: right;
+    width: 50px;
+    height: 50px;
+}

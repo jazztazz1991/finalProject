@@ -30,7 +30,6 @@ class Rent extends Component{
     };
 
 
-
     render() {
         return (
             <Container fluid>
@@ -53,6 +52,7 @@ class Rent extends Component{
                                     {House.name} at {House.address}
                                   </strong>
                                   <p>
+                                    <img src={House.imagesrc} alt='image of house' className="floatright"/>
                                     {House.about}
                                   </p>
                                 </Link>
