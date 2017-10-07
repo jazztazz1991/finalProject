@@ -22,11 +22,11 @@ class Rent extends Component{
     }
 
     loadHouses = () => {
-//        API.getHouses()
-//            .then(res =>
-//                    this.setState({houses: res.data, title: "", author: "", synopsis: ""})
-//                 )
-//            .catch(err => console.log(err));
+        API.getHouses()
+            .then(res =>
+                    this.setState({houses: res.data, title: "", author: "", about: ""})
+                 )
+            .catch(err => console.log(err));
     };
 
 
@@ -46,12 +46,15 @@ class Rent extends Component{
                     <Col size="md-6">
                         {this.state.houses.length ? (
                           <List>
-                            {this.state.houses.map(book => (
+                            {this.state.houses.map(House => (
                               <ListItem key={House._id}>
-                                <Link to={"/houses/" + House._id}>
+                                <Link to={"/house/" + House._id}>
                                   <strong>
-                                    {book.title} by {book.author}
+                                    {House.name} at {House.address}
                                   </strong>
+                                  <p>
+                                    {House.about}
+                                  </p>
                                 </Link>
                               </ListItem>
                             ))}
