@@ -15,10 +15,8 @@ class About extends Component {
     componentDidMount() {
         API.getHouse(this.props.match.params.id)
             .then(res => this.setState({ house: res.data, source: res.data.imagesrc}))
-            .then(console.log("state source" + this.state.source))
             .catch(err => console.log(err));
         
-        console.log("state source" + this.state.source);
     }
     
     imageFunct =() => {

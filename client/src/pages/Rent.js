@@ -40,9 +40,9 @@ class Rent extends Component{
                         <Search />
                     </Col>
                 </Row>
-                <Row>
-                    <Col size="md-3" />
-                    <Col size="md-6">
+                <Row> 
+                    <Col size="md-2" />
+                    <Col size="md-8">
                         {this.state.houses.length ? (
                           <List>
                             {this.state.houses.map(House => (
@@ -63,7 +63,7 @@ class Rent extends Component{
                           <h3>No Results to Display</h3>
                         )}
                     </Col>
-                    <Col size="md-3" />
+                    <Col size="md-2" />
                 </Row>
             </Container>
         );
