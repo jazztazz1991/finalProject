@@ -7,7 +7,7 @@ import Nav from "../components/Nav";
 import SHouse from "../components/SelectedHouse";
 import "../styles/App.css";
 
-class About extends Component {
+class House extends Component {
     state = {
         house: {},
         source: ""
@@ -64,4 +64,4 @@ class About extends Component {
 }
 
 
-export default About;
+export default House;

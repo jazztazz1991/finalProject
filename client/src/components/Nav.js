@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Nav.css";
 import { Link } from "react-router-dom";
 
-const Nav = () => 
+const Nav = (props) => 
     <ul className="nav nav-tabs">
         <li className={window.location.pathname === "/" ? "active" : ""}>
           <Link to="/">Home</Link>
