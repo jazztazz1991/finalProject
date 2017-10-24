@@ -11,10 +11,7 @@ import "../../styles/App.css";
 
 class Admin extends Component{
     state = {
-        houses: [],
-        name: "",
-        address: "",
-        about: ""
+        houses: []
     };
 
     componentDidMount(){
@@ -24,12 +21,13 @@ class Admin extends Component{
     loadHouses = () => {
         API.getHouses()
             .then(res => {
-                if(res.data.statusCode == 401){
+                if(res.data.statusCode === 401){
                     this.props.history.push("/login");
                 }
                 else {
-                    console.log("user:", res);
-                    this.setState({currentUser: res.data.sess.passport.user, house: res.data})
+                    console.log("user:", res.data.sess);
+                    this.setState({ houses: res.data.results});
+                    console.log(this.state);
                 }
             })
             .catch(err => console.log(err));
@@ -38,6 +36,7 @@ class Admin extends Component{
 
     render() {
         return (
+            <div className="adminpage">
             <Container fluid>
                 <Row>
                     <Col size="md-12">
@@ -48,21 +47,25 @@ class Admin extends Component{
                     <Col size="md-2" />
                     <Col size="md-8">
                         {this.state.houses.length ? (
-                          <List>
+                            <div>
                             {this.state.houses.map(House => (
-                              <ListItem key={House._id}>
-                                <Link to={"/house/" + House._id}>
+                              <div key={House._id} className="floatleft">
+                                  <h3>
+                                    {House.name}
+                                  </h3>
+                                     <br />
                                   <strong>
-                                    {House.name} at {House.address}
+                                     {House.address}
                                   </strong>
                                   <p>
-                                    <img src={House.imagesrc} alt='image of house' className="floatright"/>
+                                    <img src={House.imagesrc} alt='image of house' className="adminPhoto"/>
+                                        <br />
+                                        <br />
                                     {House.about}
                                   </p>
-                                </Link>
-                              </ListItem>
+                              </div>
                             ))}
-                          </List>
+                            </div>
                         ) : (
                           <h3>No Results to Display</h3>
                         )}
@@ -70,6 +73,7 @@ class Admin extends Component{
                     <Col size="md-2" />
                 </Row>
             </Container>
+            </div>
         );
       }
     }

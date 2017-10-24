@@ -4,7 +4,7 @@ const User = require("../models/user");
 // Defining methods for the authController
 module.exports = {
   doRegister: function (req, res) {
-    User.register(new User({ username: req.body.username }), req.body.password, function (err, user) {
+    User.register(new User({ username: req.body.username ,password: req.body.password}),req.body.password, function (err, user) {
       if (err) {
         return res.status(500).json({ error: err });
       }

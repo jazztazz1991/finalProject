@@ -21,7 +21,7 @@ class Register extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.username && this.state.password) {
+    if (this.state.username != "" && this.state.password != "") {
       API.register({
         username: this.state.username,
         password: this.state.password
@@ -36,6 +36,8 @@ class Register extends Component {
           }
         })
         .catch(err => console.log(err));
+    }else{
+        console.log("nothing in state");
     }
   };
 

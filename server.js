@@ -24,7 +24,7 @@ app.use(express.static("client/build"));
 app.use(require("express-session")({
     secret: 'random strings here are good',
     resave: false,
-    saveUnitialized: false
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());

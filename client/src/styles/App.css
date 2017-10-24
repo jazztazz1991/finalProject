@@ -83,3 +83,15 @@
     width: 50px;
     height: 50px;
 }
+.floatleft{
+    float: left;
+    overflow: hidden;
+    width: 45%;
+}
+.adminPhoto{
+    margin: auto;
+}
+.adminpage{
+    background-color: dimgrey;
+    height: 976px;
+}
