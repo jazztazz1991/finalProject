@@ -7,6 +7,8 @@ import Search from "../components/Search";
 import House from "../components/House";
 import { List, ListItem } from "../components/List";
 import { Col, Row, Container } from "../components/Grid";
+import Footer from "../components/Footer";
+import Center from 'react-center';
 import "../styles/App.css";
 
 class Rent extends Component{
@@ -23,8 +25,10 @@ class Rent extends Component{
 
     loadHouses = () => {
         API.getHouses()
-            .then(res =>
-                    this.setState({houses: res.data, title: "", author: "", about: ""})
+            .then(res => {
+                    this.setState({houses: res.data.results, title: "", author: "", about: ""});
+                    console.log(res);
+        }
                  )
             .catch(err => console.log(err));
     };
@@ -37,34 +41,43 @@ class Rent extends Component{
                     <Col size="md-12">
                         <Header />
                         <Nav />
-                        <Search />
                     </Col>
                 </Row>
-                <Row> 
+                <Row>
+                    <Col size="md-4" />
+                    <Col size="md-4" > 
+                        <h1> Homes For Rent </h1>
+                    </Col>
+                    <Col size="md-4" />
+                </Row>
+                <Row>
                     <Col size="md-2" />
                     <Col size="md-8">
+                        <Center>
                         {this.state.houses.length ? (
-                          <List>
+                          <div>
                             {this.state.houses.map(House => (
-                              <ListItem key={House._id}>
+                              <div key={House._id} className="rentHouse">
                                 <Link to={"/house/" + House._id}>
-                                  <strong>
+                                  <h3>
                                     {House.name} at {House.address}
-                                  </strong>
-                                  <p>
+                                  </h3>
+                                  <p className="rentFont">
                                     <img src={House.imagesrc} alt='image of house' className="floatright"/>
                                     {House.about}
                                   </p>
                                 </Link>
-                              </ListItem>
+                              </div>
                             ))}
-                          </List>
+                          </div>
                         ) : (
                           <h3>No Results to Display</h3>
                         )}
+                        </Center>
                     </Col>
                     <Col size="md-2" />
                 </Row>
+                <Footer />
             </Container>
         );
       }

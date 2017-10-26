@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import "../styles/Footer.css";
 
 const Footer = () => (
-    <div className="footer">
+    <div className="footerFixed">
         <Row>
             <Col size="md-3" />
             <Col size="md-6">

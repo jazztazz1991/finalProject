@@ -5,6 +5,8 @@ const houseSchema = new Schema({
   name: { type: String, required: true },
   address: { type: String, required: true },
   about: String,
+  aboutlong: String,
+  imagesrc: String,
   date: { type: Date, default: Date.now }
 });
 

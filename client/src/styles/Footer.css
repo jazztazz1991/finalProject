@@ -1,7 +1,21 @@
 .footer{
     background-color: dimgrey;
+    
     clear: both;
+    margin-top: 5px;
+    width: 100%
 }
 .footTitle{
     text-align: center;
+}
+
+.footerFixed{
+    background-color: dimgrey;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    clear: both;
+    margin-top: 5px;
+    width: 100%
 }

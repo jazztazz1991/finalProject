@@ -7,6 +7,9 @@ export default {
   getHouse: function(id) {
     return axios.get("/api/house/" + id);
   },
+  createHouse: function(houseData) {
+    return axios.post("/api/house", houseData);
+  },
     login: function(userData) {
         return axios.post("/api/login", userData);
     },

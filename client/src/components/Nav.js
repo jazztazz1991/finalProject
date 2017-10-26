@@ -7,9 +7,7 @@ const Nav = (props) =>
         <li className={window.location.pathname === "/" ? "active" : ""}>
           <Link to="/">Home</Link>
         </li>
-        <li className={window.location.pathname === "/about" ? "active" : ""}>
-          <Link to="/about">About</Link>
-        </li>
+        
         <li className={window.location.pathname === "/management" ? "active" : ""}>
           <Link to="/management">Management</Link>
         </li>

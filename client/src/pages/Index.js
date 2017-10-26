@@ -6,17 +6,41 @@ import Plan1 from "../components/Plan1";
 import Plan2 from "../components/Plan2";
 import Plan3 from "../components/Plan3";
 import Footer from "../components/Footer";
+import Aboutus from "../components/Aboutus";
 import "../styles/App.css";
+import { Col, Row, Container } from "../components/Grid";
 
 const Home = () => (
             <div>
-                <Header />
-                <Nav />
-                <PictureShow />
-                <Plan1 />
-                <Plan2 />
-                <Plan3 />
-                <Footer />
+                <Container fluid>
+                    <Row>
+                        <Header />
+                    </Row>
+                    <Row>
+                        <Nav />
+                    </Row>
+                    <Row>
+                        <PictureShow />
+                    </Row>
+                    <Row>
+                        <Col size="md-4">
+                            <Plan1 />
+                        </Col>
+                        <Col size="md-4">
+                            <Plan2 />
+                        </Col>
+                        <Col size="md-4">
+                            <Plan3 />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Aboutus/>
+                    </Row>
+                    <Row>
+                        <Footer/>
+                    </Row>
+    
+                </Container>
             </div>    
 )
 

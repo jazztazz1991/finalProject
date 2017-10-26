@@ -1,3 +1,11 @@
+h1{
+    text-align: center;
+}
+h3{
+    text-align: center;
+    color: dodgerblue;
+}
+
 .header{
     width: auto;
     height: 75px;
@@ -13,10 +21,11 @@
     height: 400px;
 }
 .plan{
-    float: left;
     margin: 1.5%;
-    height: 150px;
-    width: 30%;
+    height: auto;
+    width: 50%;
+    clear: both;
+    text-align: center;
     
 }
 .aboutus{
@@ -28,6 +37,7 @@
     margin-top: 10px;
     margin-right: auto;
     margin-left: auto;
+    clear: both;
 }
 .search{
     width: 90%
@@ -41,8 +51,6 @@
     
 }
 .abmg{
-    background-color: mediumpurple;
-    color: white;
     padding: 2px;
     font-size: 16px;
     width: 90%;
@@ -80,8 +88,8 @@
 
 .floatright{
     float: right;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 .floatleft{
     float: left;
@@ -93,5 +101,39 @@
 }
 .adminpage{
     background-color: dimgrey;
-    height: 976px;
+    min-height: 977px;
+    height: 100%;
+}
+.rentHouse{
+    width: 900px;
+    padding: 5px;
+    height: 150px;
+}
+.margin{
+    height: 5px;
+}
+.clear{
+    clear: both;
+}
+.fixed{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.mngText{
+    text-align: center;
+    width: 200px;
+    margin: auto;
+}
+.planText{
+    text-align: center;
+    font-size: 21px;
+}
+.houseAbout{
+    text-align: center;
+    font-size: 21px;
+}
+.rentFont{
+    font-size:18px;
 }

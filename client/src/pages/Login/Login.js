@@ -44,17 +44,20 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <Nav userInfo={this.state.currentUser} />
+      <div className="adminpage">
         <Container fluid>
           <Row>
-            <Col size="md-12">
+            <Col size="md-5" />
+            <Col size="md-2">
                 <h1>
                   Login
                 </h1>
             </Col>
+            <Col size="md-5" />
           </Row>
           <Row>
+            <Col size="md-4" />
+            <Col size="md-4">
             <form>
               <Input
                 onChange={this.handleInputChange}
@@ -74,6 +77,8 @@ class Login extends Component {
                 Login
               </FormBtn>
             </form>
+            </Col>
+            <Col size="md-4" />
           </Row>
         </Container>
       </div>

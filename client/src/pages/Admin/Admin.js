@@ -7,11 +7,17 @@ import Search from "../../components/Search";
 import House from "../../components/House";
 import { List, ListItem } from "../../components/List";
 import { Col, Row, Container } from "../../components/Grid";
+import { Input, FormBtn, TextArea } from "../../components/Form";
 import "../../styles/App.css";
+import "../../styles/Admin.css";
 
 class Admin extends Component{
     state = {
-        houses: []
+        houses: [],
+        name: "",
+        address: "",
+        imagesrc: "",
+        about: ""
     };
 
     componentDidMount(){
@@ -33,15 +39,44 @@ class Admin extends Component{
             .catch(err => console.log(err));
     };
 
+    handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.name != "" && this.state.address != "" && this.state.about != "") {
+      API.createHouse({
+        name: this.state.name,
+        address: this.state.address,
+        imagesrc: this.state.imagesrc,
+        about: this.state.about
+      })
+        .then(res => {
+          console.log(res.config.data);
+          if(res.config.data){
+            this.loadHouses();
+          }
+        })
+        .catch(err => console.log(err));
+    }else{
+        console.log("nothing in state");
+    }
+  };
 
     render() {
         return (
             <div className="adminpage">
             <Container fluid>
                 <Row>
-                    <Col size="md-12">
-                        <h1> WELCOME ADMINISTRATOR</h1>
+                    <Col size="md-4" />
+                    <Col size="md-4">
+                        <h1 className="adminTitle"> WELCOME ADMINISTRATOR</h1>
                     </Col>
+                    <Col size="md-4" />
                 </Row>
                 <Row> 
                     <Col size="md-2" />
@@ -72,6 +107,57 @@ class Admin extends Component{
                     </Col>
                     <Col size="md-2" />
                 </Row>
+                <Row>
+                    <Col size="md-4" />
+                    <Col size="md-4">
+                        <h1 className="adminTitle"> Add New House</h1>
+                    </Col>
+                    <Col size="md-4" />
+                </Row>
+                <Row>
+                    <Col size="md-3" />
+                        <Col size="md-6">
+                        <form>
+                          <Input
+                            onChange={this.handleInputChange}
+                            name="name"
+                            placeholder="House Name (required)"
+                          />
+                          <Input
+                            onChange={this.handleInputChange}
+                            name="address"
+                            placeholder="Address (required)"
+                          />
+                          <Input
+                            onChange={this.handleInputChange}
+                            name="imagesrc"
+                            placeholder="Image Link (required)"
+                          />
+                          <TextArea
+                            onChange={this.handleInputChange}
+                            name="about"
+                            placeholder="Short description (required)"
+                          />
+                            <TextArea
+                            onChange={this.handleInputChange}
+                            name="aboutlong"
+                            placeholder="Long description (required)"
+                          />
+                          <FormBtn
+                            disabled={!(this.state.name && this.state.address && this.state.imagesrc && this.state.about)}
+                            onClick={this.handleFormSubmit}
+                          >
+                            Add House
+                          </FormBtn>
+                        </form>
+                    </Col>
+                    <Col size="md-3" />
+                  </Row>
+                  <Row className="margin">
+                        <Col size="md-3">
+                                <p>  </p>
+                            </Col>
+                      </Row>
             </Container>
             </div>
         );
