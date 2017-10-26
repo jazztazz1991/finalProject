@@ -1,62 +1,11 @@
 # Create React Express App
 
-## About This Boilerplate
+This site was created by
 
-This setup allows for a monolithic Node/Express/React app which can be easily deployed to Heroku.
+Cody Chase - Full Stack
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+For this site we created a responsive site to allow users to users to find local houses near them that are available for rent. The site is also for house owners who can hire us to manage there home and put it up for rent when not occupied.
 
-## Starting the app locally
+For future development we plan on increasing functionality for the user and ease of site maintenance for the admin.
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
-
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
-
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-### Create a Git Repo
-
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### Heroku
-
-Make sure that you have a Heroku app created for this project. If so, proceed to the next section, otherwise run the following command in your terminal:
-
-```
-heroku create
-```
-
-Optionally add an argument for your application's name after `create`, e.g.
-
-```
-heroku myawesomeapp
-```
-
-### Deploying
-
-After confirming that you have an up to date git repository and a Heroku app created, run the following command to deploy:
-
-```
-yarn deploy
-```
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+To create this app we used a reactJS front-send with a node/express back-end support with mongoDB for data storage.
