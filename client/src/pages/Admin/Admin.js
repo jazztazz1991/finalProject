@@ -8,6 +8,7 @@ import House from "../../components/House";
 import { List, ListItem } from "../../components/List";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn, TextArea } from "../../components/Form";
+import DeleteBtn from "../../components/DeleteBtn";
 import "../../styles/App.css";
 import "../../styles/Admin.css";
 
@@ -17,7 +18,8 @@ class Admin extends Component{
         name: "",
         address: "",
         imagesrc: "",
-        about: ""
+        about: "",
+        aboutlong: "",
     };
 
     componentDidMount(){
@@ -67,6 +69,11 @@ class Admin extends Component{
     }
   };
 
+  deleteHouse = id => {
+    API.deleteHouse(id)
+      .then(res => this.loadHouses())
+      .catch(err => console.log(err));
+  };
     render() {
         return (
             <div className="adminpage">
@@ -88,6 +95,7 @@ class Admin extends Component{
                                   <h3>
                                     {House.name}
                                   </h3>
+                                    <DeleteBtn onClick={() => this.deleteHouse(House._id)} />
                                      <br />
                                   <strong>
                                      {House.address}

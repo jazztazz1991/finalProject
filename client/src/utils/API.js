@@ -10,6 +10,9 @@ export default {
   createHouse: function(houseData) {
     return axios.post("/api/house", houseData);
   },
+    deleteHouse: function(id) {
+    return axios.delete("/api/house/" + id);
+  },
     login: function(userData) {
         return axios.post("/api/login", userData);
     },
