@@ -55,7 +55,8 @@ class Admin extends Component{
         name: this.state.name,
         address: this.state.address,
         imagesrc: this.state.imagesrc,
-        about: this.state.about
+        about: this.state.about,
+        aboutlong: this.state.aboutlong
       })
         .then(res => {
           console.log(res.config.data);
